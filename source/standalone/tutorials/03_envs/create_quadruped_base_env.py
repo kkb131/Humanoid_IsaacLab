@@ -98,6 +98,21 @@ class MySceneCfg(InteractiveSceneCfg):
         debug_vis=False,
     )
 
+    # terrain = TerrainImporterCfg(
+    #     prim_path="/World/ground",
+    #     usd_path="file:///workspace/isaaclab/data_storage/Envrionments/test_1.usd",
+    #     terrain_type="usd",
+    #     max_init_terrain_level=5,
+    #     collision_group=-1,
+    #     # physics_material=sim_utils.RigidBodyMaterialCfg(
+    #     #     friction_combine_mode="multiply",
+    #     #     restitution_combine_mode="multiply",
+    #     #     static_friction=1.0,
+    #     #     dynamic_friction=1.0,
+    #     # ),
+    #     debug_vis=False,
+    # )
+
     # add robot
     robot: ArticulationCfg = ANYMAL_C_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
 

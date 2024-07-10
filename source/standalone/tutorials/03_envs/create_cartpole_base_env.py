@@ -18,6 +18,7 @@ from omni.isaac.lab.app import AppLauncher
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Tutorial on creating a cartpole base environment.")
 parser.add_argument("--num_envs", type=int, default=16, help="Number of environments to spawn.")
+parser.add_argument("--env_spacing", type=int, default=10, help="Number of environments to spawn.")
 
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
@@ -135,6 +136,7 @@ def main():
     # parse the arguments
     env_cfg = CartpoleEnvCfg()
     env_cfg.scene.num_envs = args_cli.num_envs
+    env_cfg.scene.env_spacing = args_cli.env_spacing
     # setup base environment
     env = ManagerBasedEnv(cfg=env_cfg)
 

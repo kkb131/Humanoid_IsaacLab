@@ -28,7 +28,7 @@ from omni.isaac.lab.app import AppLauncher
 
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Tutorial on creating a floating cube environment.")
-parser.add_argument("--num_envs", type=int, default=64, help="Number of environments to spawn.")
+parser.add_argument("--num_envs", type=int, default=128, help="Number of environments to spawn.")
 
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
@@ -197,7 +197,7 @@ class ActionsCfg:
     """Action specifications for the MDP."""
 
     joint_pos = CubeActionTermCfg(asset_name="cube")
-
+    ...
 
 @configclass
 class ObservationsCfg:
@@ -226,7 +226,7 @@ class EventCfg:
         func=mdp.reset_root_state_uniform,
         mode="reset",
         params={
-            "pose_range": {"x": (-0.5, 0.5), "y": (-0.5, 0.5), "yaw": (-3.14, 3.14)},
+            "pose_range": {"x": (-1, 1), "y": (-1, 1), "yaw": (-3.14, 3.14)},
             "velocity_range": {
                 "x": (-0.5, 0.5),
                 "y": (-0.5, 0.5),
